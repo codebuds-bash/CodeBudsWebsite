@@ -1,0 +1,638 @@
+@font-face {
+    font-family: 'SF Pro';
+    src: url('/fonts/sf-pro-text-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2'), /* Adjust the path as necessary */
+         url('fonts/JetBrainsMono-Regular.woff') format('woff'); /* Optional fallback */
+    font-weight: 400; /* Normal weight */
+    font-style: normal; /* Normal style */
+}
+
+
+
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'SF Pro', 'Arial', sans-serif;
+    background-color: #212121;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Navigation Menu Styles */
+.navbar {
+    background-color: #3a3a3a; /* Change to your desired color */
+    height: 60px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    border-radius: 10px; /* Add border radius to the entire navbar */
+    margin: 20px 460px 0; /* Add margin-top for spacing from top and decrease size from left and right */
+    position: fixed; /* Make navbar fixed */
+    top: 20px; /* Set the distance from the top of the viewport */
+    left: 20px; /* Set the distance from the left of the viewport */
+    right: 20px; /* Set the distance from the right of the viewport */
+    z-index: 1000; /* Ensure the navbar stays above other elements */
+}
+
+.navbar-content {
+    display: flex; /* Display links in a row */
+    max-width: 100%; /* Ensure it does not exceed the navbar width */
+    padding: 0 10px; /* Add some horizontal padding inside the content */
+}
+
+.navbar a {
+    color: #ffffff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 15px 20px; /* Adjust padding for size */
+    font-size: 18px; /* Font size for links */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+nav a:hover {
+    color: #fab570; /* Change color on hover */
+}
+
+/* Page Container to Align Card to the Right */
+.page-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 100px;
+    margin-top: 60px; /* Space for fixed nav */
+}
+
+/* Card Styles */
+.container {
+    color: white;
+    position: relative;
+    font-family: SF Pro;
+}
+
+.container::before, 
+.container::after {
+    content: "";
+    background-color: #fab5704c;
+    position: absolute;
+}
+
+.container::before {
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    top: 30%;
+    right: 7%;
+}
+
+.container::after {
+    height: 3rem;
+    top: 8%;
+    right: 5%;
+    border: 1px solid;
+}
+
+.container .box {
+    margin-top: -400px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+    width: 400px;
+    height: 600px;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.074);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 0.7rem;
+    transition: all ease 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.container .box .title {
+    margin-top: -10px;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.container .box div strong {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.container .box div p {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+.container .box div span {
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+
+.container .box div span:nth-child(3) {
+    font-weight: 500;
+    margin-right: 0.2rem;
+}
+
+.container .box:hover {
+    box-shadow: 0px 0px 20px 1px #ffbb763f;
+    border: 3px solid rgba(255, 255, 255, 0.454);
+}
+
+/* Profile Image Styling */
+.profile-img {
+    width: 400px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Section Styles */
+section {
+    min-height: 100vh; /* Make each section at least full height */
+    padding: 60px 20px; /* Padding for sections */
+    background-color: #212121; /* Background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section h1 {
+    margin: 20px 0; /* Space above and below the heading */
+}
+
+section p {
+    max-width: 800px; /* Limit width for readability */
+    text-align: center; /* Center text */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .page-container {
+        padding-right: 20px; /* Less padding on smaller screens */
+    }
+
+    .container .box {
+        width: 90%; /* Adjust width for smaller screens */
+        height: auto; /* Adjust height based on content */
+    }
+
+    .profile-img {
+        width: 80%; /* Adjust image size for smaller screens */
+    }
+
+    nav {
+        flex-direction: column; /* Stack nav items vertically on smaller screens */
+        align-items: center; /* Center nav items */
+    }
+
+    nav a {
+        margin: 5px 0; /* Space between links in column layout */
+    }
+}
+
+/* Dynamic Title Container */
+.dynamic-title-container {
+    position: relative; /* Position this container absolutely */
+    top: 250px; /* Adjust this value to position it below your card */
+    left: 20px; /* Position it to the left */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+}
+
+.dynamic-title {
+    font-size: 3em; /* Adjust the font size as needed */
+    color: #fab570; /* Adjust the color as needed */
+}
+
+.dynamic-description {
+    font-size: 0.7em; /* Adjust font size as needed */
+    color: #fdfdfd; /* Adjust text color as needed */
+    line-height: 1.5; /* Adjust line height for readability */
+    width: 900px; /* Limit width for better readability */
+    margin-top: 10px;
+    text-align: left; /* Align the text to the left */
+    margin-bottom: 10px; /* Reduce margin to fit icons directly below */
+}
+
+/* Cursor Animation */
+.cursor {
+    display: inline-block;
+    width: 10px; /* Width of the cursor */
+    height: 1em; /* Height to match text */
+    background-color: #ffffff; /* Cursor color */
+    animation: blink 0.8s step-end infinite; /* Blinking effect */
+}
+
+/* Blinking animation */
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+}
+
+/* Social Media Links Section */
+.social-media-container {
+    height: fit-content;
+    position: relative;
+    top: 300px;
+    z-index: 500;
+    left: 20px;
+    display: flex; /* Use flexbox to align icons horizontally */
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: flex-start; /* Align icons to the left */
+    margin: 0; /* Reset margin for the container */
+    padding: 0; /* Reset padding for the container */
+}
+
+.social-icon {
+
+    margin-right: 30px; /* Space between icons */
+    transition: transform 0.3s; /* Smooth scaling effect */
+    
+}
+
+.social-icon img {
+    width: 60px; /* Set width for social media icons */
+    height: auto; /* Maintain aspect ratio */
+    
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+
+/* About Section css*/
+.about-container {
+    display: flex; /* Arrange video and text side by side */
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center items vertically */
+    margin-top: 20px; /* Space above the about container */
+}
+.about h1{
+    font-size: 2em;
+}
+
+.about-video {
+    flex: 1; /* Allow the video to take up remaining space */
+    display: flex;
+    justify-content: center; /* Center the video */
+}
+
+.about-text {
+    flex: 1; /* Allow the text to take up remaining space */
+    padding-left: 20px; /* Space between the video and text */
+}
+
+.about-text p {
+    
+    text-align: left;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 1.2em; /* Adjust this value to increase or decrease text size */
+    line-height: 1.5; /* Optional: Adjust line height for better readability */
+    color: #fdfdfd; /* Ensure text color remains visible */
+}
+
+
+.about-video video {
+    margin-top: 30px;    
+    width: 94%; /* Make video responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+}
+
+
+
+
+/* Notes Section */
+#notes {
+    padding: 20px;
+    text-align: center;
+    background-color: #212121; /* Light background for the section */
+}
+
+#notes h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Book */
+.book {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    transition: transform 0.5s;
+    margin: 0 auto; /* Center the book */
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front, .back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content, .back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform: rotateY(180deg);
+}
+.front-content img, .back-content img {
+    width: 100%; /* Adjust to fit the page width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent inline spacing */
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.5s;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: #636363;
+}
+
+i {
+    font-size: 50px;
+    color: gray;
+}
+
+/* Paper stack order */
+#p1 { z-index: 3; }
+#p2 { z-index: 2; }
+#p3 { z-index: 1; }
+
+
+/* Section Styles */
+#videos {
+    margin-top: 100px; 
+    padding: 20px;
+    text-align: center;
+    background-color: #212121;
+}
+
+#videos h1 {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.video-card-container {
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+
+.card, .card2 {
+    width: 500px;
+    height: 260px;
+    border-radius: 20px;
+    transition: all 0.3s;
+    gap: 30px;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.card {
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+}
+
+.card:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+.card {
+    background-color: #1a1a1a;
+}
+
+.card:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+}
+
+.thumbnail {
+    width: 500px;
+    height: 260px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+
+/* Compiler Section Styles */
+#compiler {
+    margin: 50px auto;
+    width: 100%; /* Set a maximum width for the section */
+    color: #e0e0e0; /* Light text color for contrast */
+}
+
+.compiler-container {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: flex-start; /* Align items at the start */
+}
+
+/* Description Section */
+.compiler-description {
+    align-items: left;
+    height: 498px;
+    flex: 1; /* Take up available space on the left */
+    padding: 20px; /* Padding for inner spacing */
+    border: 1px solid #444; /* Dark border around description */
+    border-radius: 5px; /* Slightly rounded corners */
+    background-color: #2a2a2a; /* Dark background color */
+}
+
+/* Code Card Section */
+.compiler-card {
+    height: 498px;
+    width: 350px; /* Fixed width for the card */
+    flex: 1; /* Take up available space on the right */
+    padding: 20px; /* Padding for inner spacing */
+    border: 1px solid #444; /* Dark border around card */
+    border-radius: 5px; /* Slightly rounded corners */
+    background-color: #2a2a2a; /* Dark background color */
+    margin-left: 20px; /* Space between description and card */
+    display: flex; /* Use flexbox to align items vertically */
+    flex-direction: column; /* Align items in a column */
+    justify-content: space-between; /* Space items evenly */
+    box-shadow: 0 0 20px 5px rgba(255, 248, 51, 0.5), 0 0 30px rgba(239, 249, 106, 0.3);
+}
+
+/* Headings */
+h1{
+    font-size: 2em;
+    color: #ffffff;
+
+} 
+h2 {
+    color: #e0e0e0; /* Light color for headings */
+}
+
+/* Paragraphs */
+p {
+    text-align: left;
+    justify-items: auto;
+    font-size: 26px; /* Standard font size for paragraphs */
+    line-height: 1.5; /* Spacing between lines */
+    color: #d0d0d0; /* Slightly lighter color for text */
+}
+
+/* Textarea for Code Editor */
+textarea {
+    width: 95%; /* Full width for the code editor */
+    height: 200px; /* Set a height for the textarea */
+    border: 1px solid #666; /* Dark border for textarea */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside textarea */
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #1e1e1e; /* Dark background for textarea */
+    color: #e0e0e0; /* Light text color for textarea */
+    resize: none; /* Prevent resizing */
+}
+
+/* Button */
+.cssbuttons-io {
+    position: relative;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px; /* Decreased font size */
+    letter-spacing: 0.05em;
+    border-radius: 0.5em; /* Slightly smaller radius */
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to right, #8e2de2, #4a00e0); /* Gradient background */
+    color: ghostwhite; /* Text color */
+    overflow: hidden;
+    padding: 8px 16px; /* Decreased padding for smaller button */
+}
+
+.cssbuttons-io svg {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em; /* Space between icon and text */
+}
+
+.cssbuttons-io span {
+    position: relative;
+    z-index: 10; /* Position above background layers */
+    transition: color 0.4s; /* Smooth color transition */
+    display: inline-flex;
+    align-items: center; /* Align items vertically */
+}
+
+.cssbuttons-io::before,
+.cssbuttons-io::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Set behind the button */
+}
+
+.cssbuttons-io::before {
+    content: "";
+    background: #000; /* Background for the skewed effect */
+    width: 120%; /* Make it wider for skew effect */
+    left: -10%; /* Offset to the left */
+    transform: skew(30deg); /* Skew for stylish effect */
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1); /* Smooth transition */
+}
+
+.cssbuttons-io:hover::before {
+    transform: translate3d(100%, 0, 0); /* Move on hover */
+}
+
+.cssbuttons-io:active {
+    transform: scale(0.95); /* Scale down on click */
+}
+
+/* Output Container */
+.output-container {
+    margin-top: 20px; /* Space above output section */
+    border: 1px solid #666; /* Dark border around output */
+    padding: 10px; /* Padding inside output section */
+    background-color: #1e1e1e; /* Dark background for output */
+}
+
+/* Preformatted Text */
+pre {
+    margin: 0; /* Remove margin from preformatted text */
+    white-space: pre-wrap; /* Wrap long lines */
+    word-wrap: break-word; /* Break words if needed */
+    color: #e0e0e0; /* Light color for output text */
+}
