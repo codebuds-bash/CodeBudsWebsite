@@ -170,6 +170,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            margin-top: 30px;
             padding-top: 80px;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
             position: relative;
@@ -720,7 +721,7 @@
                 display: block;
             }
 
-            
+          
             
             .nav-links {
                 position: fixed;
