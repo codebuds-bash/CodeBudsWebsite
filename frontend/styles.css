@@ -120,6 +120,11 @@
             justify-content: center;
             color: white;
         }
+        .logo-img{
+            width: 30%;
+            height: auto
+            
+        }
 
         .nav-links {
             display: flex;
