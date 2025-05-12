@@ -339,6 +339,27 @@
             border-radius: var(--border-radius-lg);
         }
 
+        #moto{
+            width: 100%;
+            height: auto;
+            background: white;            
+            
+        }
+        #moto .container{
+            display: flex;
+            
+            height: 100%;
+        }
+        #moto .container img{
+            width: 90%;
+            height: auto;
+            
+            position: relative;
+        }
+
+
+
+
         /* ===== Notes Section ===== */
         .book {
           position: relative;
