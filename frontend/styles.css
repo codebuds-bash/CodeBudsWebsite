@@ -1,4 +1,7 @@
 
+html,body{
+    scroll-behavior: smooth;
+}
         /* ===== Base Styles & Variables ===== */
         :root {
             --primary: #6c63ff;
